@@ -1,5 +1,5 @@
-import Heritage from "@/components/Heritage";
-import Hero from "@/components/Hero";
+import Heritage from "@/components/home/Heritage";
+import Hero from "@/components/home/Hero";
 import React from "react";
 
 export default function Home() {
