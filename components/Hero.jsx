@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative bg-linear-to-b from-orange-50/50 to-transparent py-20 lg:py-32">
+    <section className="relative bg-linear-to-b from-orange-50/50 to-transparent py-16 lg:py-24">
       <div className="container mx-auto px-4 lg:px-6 grid lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-6 text-center lg:text-left">
           <span className="text-orange-700 uppercase tracking-widest text-xs font-bold bg-orange-100 px-3 py-1 rounded-full">
