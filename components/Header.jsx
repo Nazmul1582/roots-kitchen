@@ -4,7 +4,7 @@ import React from "react";
 export default function Header() {
   return (
     <header className="border-b border-orange-100 bg-[#FDFBF7]/80 backdrop-blur-md sticky top-0 z-50">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <nav className="container mx-auto px-4 lg:px-6 h-20 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Link
             href="/"
