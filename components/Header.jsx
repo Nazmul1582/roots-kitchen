@@ -16,7 +16,7 @@ export default function Header() {
             </span>
           </Link>
         </div>
-        <div className="flex items-center gap-8 font-medium text-stone-600">
+        <div className="hidden sm:flex items-center gap-8 font-medium text-stone-600">
           <Link href="/story" className="hover:text-orange-700 transition">
             Our Story
           </Link>
@@ -29,7 +29,7 @@ export default function Header() {
         </div>
         <Link
           href="/recipes"
-          className="hidden md:block bg-orange-800 text-white px-5 py-2.5 rounded-full font-medium hover:bg-orange-900 transition text-sm"
+          className="bg-orange-800 text-white px-5 py-2.5 rounded-full font-medium hover:bg-orange-900 transition text-sm"
         >
           Find a Recipe
         </Link>
