@@ -1,9 +1,8 @@
-import getCategories from "@/lib/getCategories";
-import CategoryCard from "./CategoryCard";
+import CategoryContent from "./CategoryContent";
+import { Suspense } from "react";
+import CategoriesSkeleton from "./CategoriesSkeleton";
 
 export default async function Categories() {
-  const data = await getCategories();
-  const categories = data.categories || [];
   return (
     <section className="py-16 lg:py-24 bg-stone-50">
       <div className="container mx-auto px-4 lg:px-6">
@@ -15,12 +14,9 @@ export default async function Categories() {
             Explore cooking methods molded by local land and ancient elements.
           </p>
         </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
-          {categories.map((cat) => (
-            <CategoryCard key={cat.id} category={cat} />
-          ))}
-        </div>
+        <Suspense fallback={<CategoriesSkeleton />}>
+          <CategoryContent />
+        </Suspense>
       </div>
     </section>
   );
