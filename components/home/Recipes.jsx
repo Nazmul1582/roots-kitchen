@@ -1,12 +1,9 @@
 import Link from "next/link";
-import Image from "next/image";
-import getRecipes from "@/lib/getRecipes";
-import RecipeCard from "../shared/RecipeCard";
+import { Suspense } from "react";
+import RecipesSkeleton from "../shared/RecipesSkeleton";
+import RecipesContent from "./RecipesContent";
 
 export default async function Recipes() {
-  const data = await getRecipes();
-  const recipes = data.foods.slice(0, 12) || [];
-
   return (
     <section className="bg-linear-to-b from-orange-50 to-transparent py-20">
       <div className="container mx-auto px-4 lg:px-6">
@@ -31,11 +28,9 @@ export default async function Recipes() {
           </Link>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-          {recipes.map((recipe) => (
-            <RecipeCard key={recipe.id} recipe={recipe} />
-          ))}
-        </div>
+        <Suspense fallback={<RecipesSkeleton />}>
+          <RecipesContent />
+        </Suspense>
       </div>
     </section>
   );

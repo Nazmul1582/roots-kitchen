@@ -1,7 +1,7 @@
 import getCategories from "@/lib/getCategories";
 import CategoryCard from "./CategoryCard";
 
-export default async function CategoryContent() {
+export default async function CategoriesContent() {
   const data = await getCategories();
   const categories = data.categories || [];
   return (

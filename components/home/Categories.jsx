@@ -1,4 +1,4 @@
-import CategoryContent from "./CategoryContent";
+import CategoriesContent from "./CategoriesContent";
 import { Suspense } from "react";
 import CategoriesSkeleton from "./CategoriesSkeleton";
 
@@ -15,7 +15,7 @@ export default async function Categories() {
           </p>
         </div>
         <Suspense fallback={<CategoriesSkeleton />}>
-          <CategoryContent />
+          <CategoriesContent />
         </Suspense>
       </div>
     </section>
