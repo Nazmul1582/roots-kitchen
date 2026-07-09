@@ -6,7 +6,7 @@ export default async function RecipesPage() {
 
   return (
     <div>
-      <section className="bg-orange-50/40 py-12 border-b border-orange-100/40">
+      <section className="bg-orange-50/40 py-12 lg:pb-16 border-b border-orange-100/40">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="text-center space-y-3">
             <h1 className="font-serif text-4xl sm:text-5xl text-orange-950">
@@ -18,7 +18,7 @@ export default async function RecipesPage() {
             </p>
           </div>
           {recipes.length > 0 ? (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 pb-16 pt-12">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 pt-12">
               {recipes.map((recipe) => (
                 <RecipeCard key={recipe.id} recipe={recipe} />
               ))}
