@@ -1,13 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 export default function RecipeCard({ recipe }) {
   return (
-    <article
-      key={recipe.id}
-      className="bg-white rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm hover:shadow-md transition-all flex flex-col group"
-    >
+    <article className="bg-white rounded-2xl overflow-hidden border border-stone-200/60 shadow-sm hover:shadow-md transition-all flex flex-col group">
       <div className="relative h-60 w-full overflow-hidden bg-stone-100">
         <Image
           src={recipe.foodImg}
