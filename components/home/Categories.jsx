@@ -1,6 +1,6 @@
-import CategoriesContent from "./CategoriesContent";
+import CategoriesContent from "../CategoriesContent";
 import { Suspense } from "react";
-import CategoriesSkeleton from "./CategoriesSkeleton";
+import CategoriesSkeleton from "../skeleton/CategoriesSkeleton";
 
 export default async function Categories() {
   return (

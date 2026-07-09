@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Suspense } from "react";
-import RecipesSkeleton from "../shared/RecipesSkeleton";
-import RecipesContent from "./RecipesContent";
+import RecipesSkeleton from "../skeleton/RecipesSkeleton";
+import RecipesContent from "../RecipesContent";
 
 export default async function Recipes() {
   return (

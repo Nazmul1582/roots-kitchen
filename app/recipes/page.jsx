@@ -1,4 +1,4 @@
-import RecipeCard from "@/components/shared/RecipeCard";
+import RecipeCard from "@/components/RecipeCard";
 import getRecipes from "@/lib/getRecipes";
 export default async function RecipesPage() {
   const data = await getRecipes();
