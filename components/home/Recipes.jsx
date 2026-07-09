@@ -4,7 +4,7 @@ import getRecipes from "@/lib/getRecipes";
 
 export default async function Recipes() {
   const data = await getRecipes();
-  const recipes = data.foods.slice(0, 9);
+  const recipes = data.foods.slice(0, 9) || [];
 
   return (
     <section className="bg-linear-to-b from-orange-50 to-transparent py-20">

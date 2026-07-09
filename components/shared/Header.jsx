@@ -17,6 +17,9 @@ export default function Header() {
           </Link>
         </div>
         <div className="hidden sm:flex items-center gap-8 font-medium text-stone-600">
+          <Link href="/" className="hover:text-orange-700 transition">
+            Home
+          </Link>
           <Link href="/story" className="hover:text-orange-700 transition">
             Our Story
           </Link>

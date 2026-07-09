@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default async function Categories() {
   const data = await getCategories();
-  const categories = data.categories;
+  const categories = data.categories || [];
   return (
     <section className="py-16 lg:py-24 bg-stone-50">
       <div className="max-w-7xl mx-auto px-4 lg:px-6">

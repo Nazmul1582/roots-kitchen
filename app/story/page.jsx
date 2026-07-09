@@ -1,15 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Inter, Fraunces } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces" });
 
 export default function StoryPage() {
   return (
-    <div
-      className={`${inter.variable} ${fraunces.variable} font-sans min-h-screen bg-[#FDFBF7] text-stone-800 antialiased`}
-    >
+    <div className="bg-[#FDFBF7] text-stone-800">
       {/* 1. Editorial Hero Section */}
       <section className="py-16 lg:py-24 max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6">
         <span className="text-orange-700 uppercase tracking-widest text-xs font-bold bg-orange-100 px-3 py-1 rounded-full">
@@ -27,7 +20,7 @@ export default function StoryPage() {
       </section>
 
       {/* 2. Big Panoramic Image Showcase */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+      <section className="container mx-auto px-4 lg:px-6 mb-20">
         <div className="relative h-[350px] sm:h-[500px] w-full rounded-3xl overflow-hidden shadow-xl border-4 border-white">
           <Image
             src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=1200"
@@ -40,7 +33,7 @@ export default function StoryPage() {
       </section>
 
       {/* 3. The Narrative Split Sections */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 space-y-24 pb-24">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 space-y-24 pb-24">
         {/* Chapter 1 */}
         <div className="grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-7 space-y-4">
@@ -111,7 +104,7 @@ export default function StoryPage() {
 
       {/* 4. Core Values / Pillars Section */}
       <section className="bg-stone-50 py-20 border-t border-stone-200/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="text-center max-w-xl mx-auto mb-16">
             <h2 className="font-serif text-3xl text-orange-950">
               Our Roots & Rituals
