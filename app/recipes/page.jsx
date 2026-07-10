@@ -1,4 +1,4 @@
-import RecipesContent from "@/components/RecipesContent";
+import RecipesContent from "@/components/recipe/RecipesContent";
 import RecipesSkeleton from "@/components/skeleton/RecipesSkeleton";
 import { Suspense } from "react";
 export default async function RecipesPage() {

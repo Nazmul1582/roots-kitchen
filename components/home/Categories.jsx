@@ -1,4 +1,4 @@
-import CategoriesContent from "../CategoriesContent";
+import CategoriesContent from "../category/CategoriesContent";
 import { Suspense } from "react";
 import CategoriesSkeleton from "../skeleton/CategoriesSkeleton";
 
