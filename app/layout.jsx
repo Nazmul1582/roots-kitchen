@@ -2,6 +2,7 @@ import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
+import CartProvider from "@/context/CartContext";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces" });
@@ -28,8 +29,10 @@ export default function RootLayout({ children }) {
       className={`${inter.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full font-sans bg-[#FDFBF7] text-stone-800">
-        <Header />
-        <main>{children}</main>
+        <CartProvider>
+          <Header />
+          <main>{children}</main>
+        </CartProvider>
         <Footer />
       </body>
     </html>
