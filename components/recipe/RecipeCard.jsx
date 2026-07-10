@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Button from "../button/Button";
 
 export default function RecipeCard({ recipe }) {
   return (
@@ -18,17 +19,17 @@ export default function RecipeCard({ recipe }) {
           <span className="text-[10px] font-bold tracking-wider uppercase text-orange-700 bg-orange-50 px-2 py-0.5 rounded">
             {recipe.category}
           </span>
-          <h2 className="font-serif text-xl font-bold text-orange-950 leading-snug">
-            <Link href={`/recipes/${recipe.id}`}>{recipe.title}</Link>
-          </h2>
+          <Link href={`/recipes/${recipe.id}`}>
+            <h2 className="font-serif text-xl font-bold text-orange-950 leading-snug hover:underline">
+              {recipe.title}
+            </h2>
+          </Link>
           <h3 className="text-xl font-bold text-stone-800">
             {recipe.price} tk.
           </h3>
         </div>
         <div className="flex items-center justify-between text-xs font-semibold">
-          <button className="bg-orange-800 text-white px-5 py-2 rounded-full font-medium hover:bg-orange-900 transition text-sm md:cursor-pointer">
-            Add to cart
-          </button>
+          <Button />
           <Link
             href={`/recipes/${recipe.id}`}
             className="text-orange-800 hover:underline flex items-center gap-0.5"
