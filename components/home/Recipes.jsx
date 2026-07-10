@@ -29,7 +29,7 @@ export default async function Recipes() {
         </div>
 
         <Suspense fallback={<RecipesSkeleton />}>
-          <RecipesContent />
+          <RecipesContent limit={12} />
         </Suspense>
       </div>
     </section>

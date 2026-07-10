@@ -32,7 +32,7 @@ export default function Header() {
         </div>
         <Link
           href="/recipes"
-          className="bg-orange-800 text-white px-5 py-2.5 rounded-full font-medium hover:bg-orange-900 transition text-sm"
+          className="bg-orange-800 text-white px-5 py-2.5 rounded-full font-medium hover:bg-orange-900 transition text-sm md:cursor-pointer"
         >
           Find a Recipe
         </Link>

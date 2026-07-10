@@ -21,9 +21,14 @@ export default function RecipeCard({ recipe }) {
           <h2 className="font-serif text-xl font-bold text-orange-950 leading-snug">
             <Link href={`/recipes/${recipe.id}`}>{recipe.title}</Link>
           </h2>
+          <h3 className="text-xl font-bold text-stone-800">
+            {recipe.price} tk.
+          </h3>
         </div>
-        <div className="flex items-center justify-between text-xs pt-3 border-t border-stone-100 font-semibold">
-          <span className="text-base text-stone-800">{recipe.price} tk.</span>
+        <div className="flex items-center justify-between text-xs font-semibold">
+          <button className="bg-orange-800 text-white px-5 py-2 rounded-full font-medium hover:bg-orange-900 transition text-sm md:cursor-pointer">
+            Add to cart
+          </button>
           <Link
             href={`/recipes/${recipe.id}`}
             className="text-orange-800 hover:underline flex items-center gap-0.5"
