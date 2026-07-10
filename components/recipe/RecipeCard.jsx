@@ -29,7 +29,7 @@ export default function RecipeCard({ recipe }) {
           </h3>
         </div>
         <div className="flex items-center justify-between text-xs font-semibold">
-          <Button />
+          <Button item={recipe} />
           <Link
             href={`/recipes/${recipe.id}`}
             className="text-orange-800 hover:underline flex items-center gap-0.5"
