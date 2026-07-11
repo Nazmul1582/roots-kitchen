@@ -3,9 +3,10 @@ import RecipeCard from "./RecipeCard";
 
 export default async function RecipesContent({ limit }) {
   const data = await getRecipes();
-  const recipes = limit ? data.foods?.slice(0, limit) || [] : data.foods || [];
+  const foods = data.foods ?? [];
+  const recipes = limit ? foods.slice(0, limit) : foods;
   return recipes.length ? (
-    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
       {recipes.map((recipe) => (
         <RecipeCard key={recipe.id} recipe={recipe} />
       ))}
