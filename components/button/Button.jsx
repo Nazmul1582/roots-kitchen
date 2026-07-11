@@ -5,7 +5,7 @@ import { use } from "react";
 import { Plus, Minus } from "lucide-react";
 
 export default function Button({ item }) {
-  const { cart, addToCart } = use(CartContext);
+  const { cart, addToCart, decrementQty } = use(CartContext);
 
   const existingItem = cart?.find((cartItem) => cartItem.id === item.id);
   const quantity = existingItem?.qty ?? 0;
@@ -24,6 +24,8 @@ export default function Button({ item }) {
   return (
     <div className="flex items-center bg-orange-50 border border-orange-200 rounded-full overflow-hidden px-3 py-1 shadow-sm">
       <button
+        onClick={() => decrementQty(item.id)}
+        disabled={quantity <= 1 ? true : false}
         className="p-1.5 text-orange-800 hover:bg-orange-100/60 rounded-full transition md:cursor-pointer active:scale-90"
         aria-label="Decrease quantity"
       >

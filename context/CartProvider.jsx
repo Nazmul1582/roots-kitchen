@@ -8,19 +8,36 @@ export default function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
   const addToCart = (item) => {
-    setCart((prevCart) => {
-      const exist = cart.find((el) => el.id === item.id);
+    setCart((prev) => {
+      const exist = prev.find((el) => el.id === item.id);
       if (exist) {
-        return prevCart.map((el) =>
-          el.id === exist.id ? { ...el, qty: el.qty + 1 } : el,
+        return prev.map((el) =>
+          el.id === item.id ? { ...el, qty: el.qty + 1 } : el,
         );
       }
-      return [...prevCart, { ...item, qty: 1 }];
+
+      return [...prev, { ...item, qty: 1 }];
     });
   };
+
+  const decrementQty = (id) => {
+    setCart((prev) => {
+      return prev.map((el) => (el.id === id ? { ...el, qty: el.qty - 1 } : el));
+    });
+  };
+
+  const removeItem = (id) => {
+    setCart((prev) => prev.filter((item) => item.id !== id));
+  };
+
+  const clearCart = () => setCart([]);
+
   const value = {
     cart,
     addToCart,
+    decrementQty,
+    removeItem,
+    clearCart,
   };
   return <CartContext value={value}>{children}</CartContext>;
 }

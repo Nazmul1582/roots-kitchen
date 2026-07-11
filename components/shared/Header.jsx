@@ -4,13 +4,13 @@ import { useState, useRef, useEffect, use } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { CartContext } from "@/context/CartProvider";
-import { X, ShoppingBag, SquareMenu } from "lucide-react";
+import { X, ShoppingBag, SquareMenu, Trash2 } from "lucide-react";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const cartRef = useRef(null);
-  const { cart } = use(CartContext);
+  const { cart, removeItem, clearCart } = use(CartContext);
 
   const totalItemsCount = cart.reduce((acc, curr) => acc + curr.qty, 0);
   const totalCartPrice = cart.reduce(
@@ -131,6 +131,13 @@ export default function Header() {
                           <span className="font-mono font-medium text-stone-800">
                             {item.price * item.qty} tk.
                           </span>
+                          <button
+                            onClick={() => removeItem(item.id)}
+                            className="text-stone-400 hover:text-red-500 transition md:cursor-pointer"
+                            aria-label="Remove item"
+                          >
+                            <Trash2 size={14} />
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -153,6 +160,12 @@ export default function Header() {
                       {totalCartPrice} tk.
                     </span>
                   </div>
+                  <button
+                    onClick={() => clearCart()}
+                    className="w-full text-center text-xs text-red-500 transition underline underline-offset-2 md:cursor-pointer"
+                  >
+                    Clear cart
+                  </button>
                   <Link
                     href="/checkout"
                     onClick={() => setIsCartOpen(false)}
