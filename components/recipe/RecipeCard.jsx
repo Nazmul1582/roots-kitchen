@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../button/Button";
+import { MoveRight } from "lucide-react";
 
 export default function RecipeCard({ recipe }) {
   return (
@@ -34,7 +35,8 @@ export default function RecipeCard({ recipe }) {
             href={`/recipes/${recipe.id}`}
             className="text-orange-800 hover:underline flex items-center gap-0.5"
           >
-            View Method →
+            <span>View Method</span>
+            <MoveRight size={16} />
           </Link>
         </div>
       </div>

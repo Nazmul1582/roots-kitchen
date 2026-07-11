@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, use } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { CartContext } from "@/context/CartContext";
+import { X, ShoppingBag, SquareMenu } from "lucide-react";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -37,7 +38,11 @@ export default function Header() {
           className="p-2 -ml-2 text-stone-600 md:hidden hover:text-orange-800 transition focus:outline-none"
           aria-label="Toggle Navigation Menu"
         >
-          <span className="text-2xl">{isMobileMenuOpen ? "✕" : "≡"}</span>
+          {isMobileMenuOpen ? (
+            <X className="size-7" />
+          ) : (
+            <SquareMenu size={28} />
+          )}
         </button>
 
         <Link
@@ -67,9 +72,9 @@ export default function Header() {
         <div className="relative flex items-center" ref={cartRef}>
           <button
             onClick={() => setIsCartOpen(!isCartOpen)}
-            className="flex items-center gap-2 bg-orange-50 hover:bg-orange-100/80 transition-all text-orange-950 px-2 py-1 rounded-full border border-orange-100/70 shadow-sm font-medium text-sm md:cursor-pointer relative"
+            className="flex items-center gap-2 text-orange-950 md:cursor-pointer relative"
           >
-            <span className="text-base">🛒</span>
+            <ShoppingBag />
 
             {totalItemsCount > 0 && (
               <span className="absolute -top-1.5 -right-1.5 bg-orange-700 text-white font-mono text-[11px] font-bold h-5 w-5 rounded-full flex items-center justify-center shadow-sm animate-bounce-once">
@@ -109,7 +114,7 @@ export default function Header() {
                       <div className="grow min-w-0">
                         <Link
                           href={`/recipes/${item.id}`}
-                          className="text-xs font-semibold text-stone-800 truncate hover:underline"
+                          className="text-xs font-semibold text-stone-800 hover:underline"
                         >
                           {item.title}
                         </Link>

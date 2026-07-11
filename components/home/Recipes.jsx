@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import RecipesSkeleton from "../skeleton/RecipesSkeleton";
 import RecipesContent from "../recipe/RecipesContent";
+import { MoveRight } from "lucide-react";
 
 export default async function Recipes() {
   return (
@@ -22,9 +23,7 @@ export default async function Recipes() {
             className="text-orange-700 font-semibold hover:text-orange-900 transition group flex items-center gap-1 text-sm"
           >
             View all recipes{" "}
-            <span className="group-hover:translate-x-1 transition-transform">
-              →
-            </span>
+            <MoveRight className="size-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
 

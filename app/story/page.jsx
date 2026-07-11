@@ -1,3 +1,4 @@
+import { FlameKindling } from "lucide-react";
 import Image from "next/image";
 
 export default function StoryPage() {
@@ -116,7 +117,8 @@ export default function StoryPage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-white p-8 rounded-2xl border border-stone-100 text-center space-y-3">
-              <span className="text-3xl block">🪵</span>
+              {/* <span className="text-3xl block">🪵</span> */}
+              <FlameKindling className="block size-10 text-[#FFC83D] mx-auto" />
               <h3 className="font-serif text-xl font-bold text-orange-950">
                 Woodfire Only
               </h3>

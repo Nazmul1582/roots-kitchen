@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { MoveRight } from "lucide-react";
 
 export default function Featured() {
   const featuredRecipes = [
@@ -46,9 +47,7 @@ export default function Featured() {
             className="text-orange-700 font-semibold hover:text-orange-900 transition group flex items-center gap-1 text-sm"
           >
             View all recipes{" "}
-            <span className="group-hover:translate-x-1 transition-transform">
-              →
-            </span>
+            <MoveRight className="size-4 group-hover:translate-x-1 transition-transform"/>
           </Link>
         </div>
 
