@@ -167,7 +167,7 @@ export default function Header() {
                     Clear cart
                   </button>
                   <Link
-                    href="/checkout"
+                    href="/"
                     onClick={() => setIsCartOpen(false)}
                     className="block text-center w-full bg-orange-800 hover:bg-orange-900 text-white font-medium text-xs sm:text-sm py-2.5 rounded-xl shadow-md transition-all"
                   >

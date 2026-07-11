@@ -1,4 +1,5 @@
 import RecipesContent from "@/components/recipe/RecipesContent";
+import Search from "@/components/Search";
 import RecipesSkeleton from "@/components/skeleton/RecipesSkeleton";
 import { Suspense } from "react";
 export default async function RecipesPage() {
@@ -14,6 +15,7 @@ export default async function RecipesPage() {
               Every dish carries a story, a village, and a generation of
               culinary preservation. Unhurried, real food profiles.
             </p>
+            <Search />
           </div>
           <div className="pt-12">
             <Suspense fallback={<RecipesSkeleton />}>
