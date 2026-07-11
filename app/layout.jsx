@@ -2,7 +2,7 @@ import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
-import CartProvider from "@/context/CartContext";
+import CartProvider from "@/context/CartProvider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces" });

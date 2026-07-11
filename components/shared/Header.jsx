@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, use } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { CartContext } from "@/context/CartContext";
+import { CartContext } from "@/context/CartProvider";
 import { X, ShoppingBag, SquareMenu } from "lucide-react";
 
 export default function Header() {
