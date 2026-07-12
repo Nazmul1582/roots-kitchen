@@ -1,8 +1,9 @@
 import getRecipes from "@/lib/getRecipes";
 import RecipeCard from "./RecipeCard";
 
-export default async function RecipesContent({ limit }) {
-  const data = await getRecipes();
+export default async function RecipesContent({ limit, query }) {
+  const data = await getRecipes(query);
+
   const foods = data.foods ?? [];
   const recipes = limit ? foods.slice(0, limit) : foods;
   return recipes.length ? (
