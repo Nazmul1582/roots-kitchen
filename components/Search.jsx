@@ -10,7 +10,10 @@ export default function Search({ customClass }) {
   const handleSubmit = (formData) => {
     const search = formData.get("search");
 
-    if (search) router.push(`${pathname}?search=${search}`);
+    if (search && pathname === "/") {
+      return router.push(`/recipes?search=${search}`);
+    }
+    return router.push(`${pathname}?search=${search}`);
   };
 
   return (
@@ -21,7 +24,7 @@ export default function Search({ customClass }) {
       <input
         type="text"
         name="search"
-        placeholder="Search by ingredient (e.g., clay-pot)..."
+        placeholder="Search by ingredient (e.g., beef)..."
         className="w-full pl-4 bg-transparent outline-none text-stone-800 text-sm"
       />
       <button className="bg-orange-700 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-orange-800 transition md:cursor-pointer">
