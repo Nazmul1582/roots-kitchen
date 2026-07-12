@@ -1,6 +1,14 @@
 import getRecipe from "@/lib/getRecipe";
+import getRecipes from "@/lib/getRecipes";
 import Image from "next/image";
 import Link from "next/link";
+
+export async function generateStaticParams() {
+  const data = await getRecipes();
+  const recipes = data.foods || [];
+  const ids = recipes.slice(0, 10).map((item) => ({ id: item.id.toString() }));
+  return ids;
+}
 
 export default async function RecipeDetail({ params }) {
   const { id } = await params;
