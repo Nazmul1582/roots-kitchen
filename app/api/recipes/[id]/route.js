@@ -42,3 +42,17 @@ export async function PATCH(req, { params }) {
     data: updatedRecipe,
   });
 }
+
+export async function DELETE(req, { params }) {
+  const { id } = await params;
+  const query = { _id: new ObjectId(id) };
+
+  const deletedRecipe = await recipeCollection.deleteOne(query);
+
+  return Response.json({
+    status: 200,
+    success: true,
+    message: "Deleted successfully",
+    data: deletedRecipe,
+  });
+}
