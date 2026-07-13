@@ -1,8 +1,13 @@
-import { recipesDB } from "../../route";
+import { connect } from "@/lib/dbConnect";
+import { ObjectId } from "mongodb";
+
+const recipeCollection = connect("recipes");
 
 export async function GET(req, { params }) {
   const { id } = await params;
-  const recipe = recipesDB.find((r) => r.id === parseInt(id)) || {};
+  const query = { _id: new ObjectId(id) };
+
+  const recipe = await recipeCollection.findOne(query);
 
   return Response.json({
     status: 200,
