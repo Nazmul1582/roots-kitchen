@@ -1,6 +1,12 @@
 import { FlameKindling } from "lucide-react";
 import Image from "next/image";
 
+export const metadata = {
+  title: "Our Stroy | RootsKitchen",
+  description:
+    "Discover the heritage of RootsKitchen. From traditional wood-fired techniques to sustainably sourced local ingredients, explore our journey of bringing authentic culinary art to your table.",
+};
+
 export default function StoryPage() {
   return (
     <div className="bg-[#FDFBF7] text-stone-800">
