@@ -20,7 +20,7 @@ export async function POST(req) {
     return Response.json({
       status: 400,
       success: false,
-      message: "Title and Price are required",
+      message: "Title and price are required",
     });
   }
 

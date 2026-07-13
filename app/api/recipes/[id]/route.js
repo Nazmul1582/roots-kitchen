@@ -15,3 +15,30 @@ export async function GET(req, { params }) {
     data: recipe,
   });
 }
+
+export async function PATCH(req, { params }) {
+  const data = await req.json();
+  const { id } = await params;
+  const query = { _id: new ObjectId(id) };
+
+  if (!data.title || !data.price) {
+    return Response.json({
+      status: 400,
+      success: false,
+      message: "Title and price are required",
+    });
+  }
+
+  const newRecipe = {
+    $set: data,
+  };
+
+  const updatedRecipe = await recipeCollection.updateOne(query, newRecipe);
+
+  return Response.json({
+    status: 200,
+    success: true,
+    message: "Updated successfully",
+    data: updatedRecipe,
+  });
+}
