@@ -8,7 +8,10 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces" });
 
 export const metadata = {
-  title: "RootsKitchen | Authentic Village Recipes & Heritage Cooking",
+  title: {
+    default: "RootsKitchen | Authentic Village Recipes & Heritage Cooking",
+    template: "%s | RootsKitchen",
+  },
   description:
     "Rediscover the lost flavors of the countryside. RootsKitchen brings you traditional, slow-cooked, farm-to-table recipes passed down through generations.",
   keywords: [

@@ -2,7 +2,7 @@ import { FlameKindling } from "lucide-react";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Our Stroy | RootsKitchen",
+  title: "Our Stroy",
   description:
     "Discover the heritage of RootsKitchen. From traditional wood-fired techniques to sustainably sourced local ingredients, explore our journey of bringing authentic culinary art to your table.",
 };

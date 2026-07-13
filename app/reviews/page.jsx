@@ -3,7 +3,7 @@ import ReviewsSkeleton from "@/components/skeleton/ReviewsSkeleton";
 import { Suspense } from "react";
 
 export const metadata = {
-  title: "Community Guestbook & Reviews | RootsKitchen",
+  title: "Community Guestbook & Reviews",
   description:
     "Read real stories and culinary feedback shared directly by our global hearth collective table. Discover why our community loves our authentic preparation methods.",
 };
