@@ -2,6 +2,15 @@ import RecipesContent from "@/components/recipe/RecipesContent";
 import Search from "@/components/Search";
 import RecipesSkeleton from "@/components/skeleton/RecipesSkeleton";
 import { Suspense } from "react";
+
+export const metadata = {
+  title: {
+    absolute: "Handcrafted Culinary Recipes | RootsKitchen",
+  },
+  description:
+    "Browse our signature collection of handcrafted culinary recipes. Order traditional clay-pot lentils, premium vegan desserts, and artisanal dishes delivered straight to your door.",
+};
+
 export default async function RecipesPage({ searchParams }) {
   const params = await searchParams;
   return (
