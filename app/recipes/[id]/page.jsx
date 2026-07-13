@@ -3,6 +3,14 @@ import getRecipes from "@/lib/getRecipes";
 import Image from "next/image";
 import Link from "next/link";
 
+export async function generateMetadata({ params }) {
+  const id = (await params).id;
+  const recipeDetail = (await getRecipe(id))?.details;
+  return {
+    title: recipeDetail?.title,
+  };
+}
+
 export async function generateStaticParams() {
   const data = await getRecipes();
   const recipes = data.foods || [];
