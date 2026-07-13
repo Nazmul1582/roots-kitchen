@@ -60,7 +60,11 @@ export default function Header() {
           <Link href="/story" className="hover:text-orange-700 transition">
             Our Story
           </Link>
-          <Link href="/recipes" className="hover:text-orange-700 transition">
+          <Link
+            prefetch={false}
+            href="/recipes"
+            className="hover:text-orange-700 transition"
+          >
             Recipes
           </Link>
           <Link href="/reviews" className="hover:text-orange-700 transition">
