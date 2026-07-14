@@ -4,9 +4,10 @@ import { useActionState, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Sparkles } from "lucide-react";
+import { useFormStatus } from "react-dom";
 
 export default function AddFeedback() {
-  const { state, formAction } = useActionState(feedbackAction);
+  const { isPending } = useFormStatus();
   const feedbackAction = (formData) => {
     const message = formData.get("message");
   };
@@ -54,11 +55,11 @@ export default function AddFeedback() {
             </div>
 
             {/* Conditional Error Display Banner */}
-            {errorMessage && (
+            {/* {errorMessage && (
               <p className="text-xs font-medium text-red-600 bg-red-50 border border-red-100 p-3 rounded-xl">
                 ⚠️ {errorMessage}
               </p>
-            )}
+            )} */}
 
             {/* Action Trigger Submit Button */}
             <button
