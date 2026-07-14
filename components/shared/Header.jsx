@@ -70,6 +70,9 @@ export default function Header() {
           <Link href="/reviews" className="hover:text-orange-700 transition">
             Reviews
           </Link>
+          <Link href="/feedback" className="hover:text-orange-700 transition">
+            Feedback
+          </Link>
         </div>
 
         {/* Cart section */}
