@@ -8,8 +8,25 @@ import { useFormStatus } from "react-dom";
 
 export default function AddFeedback() {
   const { isPending } = useFormStatus();
-  const feedbackAction = (formData) => {
+  const feedbackAction = async (formData) => {
     const message = formData.get("message");
+
+    const res = await fetch("/api/feedback", {
+      method: "POST",
+      body: JSON.stringify({ message }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!res.ok) {
+      alert("Something went wrong");
+    }
+    const feedback = await res.json();
+
+    if (feedback.insertedId) {
+      alert("Feedback added successfully!");
+    }
   };
   return (
     <div
