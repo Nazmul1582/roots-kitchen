@@ -2,6 +2,7 @@ import getRecipe from "@/lib/getRecipe";
 import getRecipes from "@/lib/getRecipes";
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 export async function generateMetadata({ params }) {
   const id = (await params).id;
@@ -22,6 +23,10 @@ export default async function RecipeDetail({ params }) {
   const { id } = await params;
   const data = await getRecipe(id);
   const recipe = data.details || {};
+
+  if (!recipe.title) {
+    redirect("/recipes");
+  }
   // Extract YouTube ID safely for the video walkthrough frame if available
   const youtubeId = recipe.video ? recipe.video.split("v=")[1] : null;
 
