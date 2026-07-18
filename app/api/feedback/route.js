@@ -14,7 +14,6 @@ export async function GET() {
 
 export async function POST(req) {
   const { message } = await req.json();
-  console.log(message);
 
   if (!message) {
     return Response.json({

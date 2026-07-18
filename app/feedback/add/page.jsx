@@ -1,7 +1,5 @@
 "use client";
 
-import { useActionState, useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Sparkles } from "lucide-react";
 import { useFormStatus } from "react-dom";
@@ -24,7 +22,7 @@ export default function AddFeedback() {
     }
     const feedback = await res.json();
 
-    if (feedback.insertedId) {
+    if (feedback.data.insertedId) {
       alert("Feedback added successfully!");
     }
   };
