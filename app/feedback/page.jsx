@@ -33,7 +33,7 @@ export default async function Feedback() {
       <div className="container mx-auto px-4 lg:px-6 py-12">
         <div className="grid md:grid-cols-3 gap-6">
           {feedback.map((fb) => (
-            <FeedbackCard key={fb._id} message={fb.message} />
+            <FeedbackCard key={fb._id} feedback={fb} />
           ))}
         </div>
       </div>
